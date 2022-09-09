@@ -1,30 +1,31 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="app">
+    <app-header></app-header>
+    <router-view />
+  </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import AppHeader from "@/components/AppHeader.vue";
+import { ref } from "@vue/reactivity";
 
-nav {
-  padding: 30px;
+// types
+import NumberSystem from "./types/NumberSystem";
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+export default {
+  components: {
+    AppHeader,
+  },
+  setup() {
+    const numberSystems = ref<NumberSystem[]>([
+      { title: "Binary", value: "binary", id: "1" },
+      { title: "Decimal", value: "decimal", id: "2" },
+      { title: "Octal", value: "octal", id: "3" },
+      { title: "Hexadecimal", value: "hexadecimal", id: "4" },
+    ]);
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+    return { numberSystems };
+  },
+};
+</script>
+

@@ -1,13 +1,24 @@
 <template>
   <div class="home">
-    <h1>Hello</h1>
+    <input type="text" placeholder="Enter your number" v-model="inputNumber" />
+    <select name="" id=""></select>
+    <div class="buttons">
+      <button class="convert">Convert</button>
+      <button class="clear">Clear</button>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   name: "HomeView",
+
+  setup() {
+    const inputNumber = ref("");
+
+    return { inputNumber };
+  },
 });
 </script>
