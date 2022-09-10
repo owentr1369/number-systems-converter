@@ -36,7 +36,66 @@ export default defineComponent({
       inputNumber.value = input;
     };
 
-    return { inputNumber, numberSystems, outputNumber, clearInput };
+    // Decimal to orthers
+    // 1. decimal to binary
+    const decToBin = (input: number | string) => {
+      alert("decToBin " + input.toString(2));
+    };
+    // 2. decimal to octal
+    const decToOct = (input: number | string) => {
+      alert("decToOct " + input.toString(8));
+    };
+    // 3. decimal to hex
+    const decToHex = (input: number | string) => {
+      alert("decToHex " + input.toString(16));
+    };
+    // Binary to orthers
+    // 1. binary to decimal
+    const binToDec = (input: number | string) => {
+      alert("binToDec " + parseInt(input.toString(), 2));
+    };
+    // 2. binary to octal
+    const binToOct = (input: number | string) => {
+      alert("binToOct " + parseInt(input.toString(), 2).toString(8));
+    };
+    // 3. binary to hex
+    const binToHex = (input: number | string) => {
+      alert(
+        "binToHex " + parseInt(input.toString(), 2).toString(16).toUpperCase()
+      );
+    };
+    // Octal to orthers
+    // 1. octal to decimal
+    const octToDec = (input: number | string) => {
+      alert("Hex " + input.toString(16));
+    };
+    // 2. octal to binary
+    const octToBin = (input: number | string) => {
+      alert("Hex " + input.toString(16));
+    };
+    // 3. octal to hex
+    const octToHex = (input: number | string) => {
+      alert("Hex " + input.toString(16));
+    };
+    // Hex to orthers
+    // 1. hex to decimal
+    const hexToDec = (input: number | string) => {
+      alert("Hex " + input.toString(16));
+    };
+    // 2. hex to octal
+    const hexToOct = (input: number | string) => {
+      alert("Hex " + input.toString(16));
+    };
+    // 3. hex to binary
+    const hexToBin = (input: number | string) => {
+      alert("Hex " + input.toString(16));
+    };
+    return {
+      inputNumber,
+      numberSystems,
+      outputNumber,
+      clearInput,
+    };
   },
 });
 </script>
