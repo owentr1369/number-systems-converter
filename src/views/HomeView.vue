@@ -3,8 +3,8 @@
     <input type="text" placeholder="Enter your number" v-model="inputNumber" />
     <select name="" id=""></select>
     <div class="buttons">
-      <button class="convert">Convert</button>
-      <button class="clear" v-on:click="clearInput('')">Clear</button>
+      <button class="convert" @click="convert('hello', 'hi')">Convert</button>
+      <button class="clear" @click="clearInput('')">Clear</button>
     </div>
     <div class="output">
       <h1>{{ outputNumber }}</h1>
@@ -67,34 +67,40 @@ export default defineComponent({
     // Octal to orthers
     // 1. octal to decimal
     const octToDec = (input: number | string) => {
-      alert("Hex " + input.toString(16));
+      alert("octToDec " + parseInt(input.toString(), 8));
     };
     // 2. octal to binary
     const octToBin = (input: number | string) => {
-      alert("Hex " + input.toString(16));
+      alert("octToBin " + parseInt(input.toString(), 8).toString(2));
     };
     // 3. octal to hex
     const octToHex = (input: number | string) => {
-      alert("Hex " + input.toString(16));
+      alert("octToHex " + parseInt(input.toString(), 8).toString(16));
     };
     // Hex to orthers
     // 1. hex to decimal
     const hexToDec = (input: number | string) => {
-      alert("Hex " + input.toString(16));
+      alert("hexToDec " + parseInt(input.toString(), 16));
     };
     // 2. hex to octal
     const hexToOct = (input: number | string) => {
-      alert("Hex " + input.toString(16));
+      alert("hexToOct " + parseInt(input.toString(), 16).toString(8));
     };
     // 3. hex to binary
     const hexToBin = (input: number | string) => {
-      alert("Hex " + input.toString(16));
+      alert("hexToBin " + parseInt(input.toString(), 16).toString(2));
     };
+
+    const convert = (fromFormat: string, toFormat: string) => {
+      console.log(fromFormat, toFormat);
+    };
+
     return {
       inputNumber,
       numberSystems,
       outputNumber,
       clearInput,
+      convert,
     };
   },
 });
