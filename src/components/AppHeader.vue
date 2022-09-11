@@ -1,5 +1,5 @@
 <template>
-  <h1>Number System Converter</h1>
+  <h1>Number Systems Converter</h1>
 </template>
 
 <script>

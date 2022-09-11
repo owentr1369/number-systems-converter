@@ -1,8 +1,14 @@
 <template>
   <div class="home">
-    <input type="text" placeholder="Enter your number" v-model="inputNumber" />
-    <div>
-      <label for="fromInput">FROM</label>
+    <label for="input">Input Number</label>
+    <input
+      id="input"
+      type="text"
+      placeholder="Enter your number"
+      v-model="inputNumber"
+    />
+    <div class="option">
+      <label for="fromInput">From</label>
       <select name="" id="fromInput" v-model="inputFormat">
         <option
           :value="numberSystem.value"
@@ -13,8 +19,8 @@
         </option>
       </select>
     </div>
-    <div>
-      <label for="toInput">TO</label>
+    <div class="option">
+      <label for="toInput">To</label>
       <select name="" id="toInput" v-model="outputFormat">
         <option
           :value="numberSystem.value"
@@ -35,7 +41,11 @@
       <button class="clear" @click="clearInput('')">Clear</button>
     </div>
     <div class="output">
-      <h1>{{ outputNumber.toString().toUpperCase() }}</h1>
+      <h1>
+        {{
+          outputNumber ? outputNumber.toString().toUpperCase() : "Output number"
+        }}
+      </h1>
     </div>
   </div>
 </template>
@@ -187,3 +197,48 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="scss" scoped>
+input,
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+label {
+  text-align: left;
+  width: 100%;
+  display: block;
+}
+.options {
+  width: 100%;
+  text-align: left;
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  button {
+    border-radius: 10px;
+  }
+}
+.output {
+  background: #fff;
+  min-height: 50px;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+h1 {
+  min-height: 43.5px;
+}
+</style>
